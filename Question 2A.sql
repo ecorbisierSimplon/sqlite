@@ -1,5 +1,6 @@
 -- SQLite
-SELECT * FROM movies
+SELECT * 
+FROM movies
 WHERE director_name = 'George Lucas'
 ORDER BY movie_release_year;
 -- je cherche toutes les lignes dans la valeurs dans la colonne director_name = 'George Lucas'
