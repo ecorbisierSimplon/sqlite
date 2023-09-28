@@ -1,10 +1,7 @@
 -- SQLite
-SELECT movies.movie_title, sub.avg_rating, sub.count_movies
-FROM (
-    SELECT movie_id, AVG(rating_score) AS avg_rating, COUNT(movie_id) AS count_movies
-    FROM ratings
-    GROUP BY movie_id
-    ORDER BY AVG(rating_score) DESC, COUNT(movie_id) DESC
-    LIMIT 15
-) AS sub
-JOIN movies ON movies.movie_id = sub.movie_id;
+SELECT m.movie_title, m.movie_popularity, COUNT(DISTINCT r.movie_id) AS count_movies, AVG(r.rating_score) AS avg_rating 
+FROM ratings r 
+JOIN movies m ON r.movie_id = m.movie_id
+GROUP BY m.movie_id
+ORDER BY (m.movie_popularity * COUNT(DISTINCT r.movie_id) * AVG(r.rating_score)) DESC
+LIMIT 5;
