@@ -1,6 +1,7 @@
 -- SQLite
 -- This query retrieves movie title, popularity, count of votes, and average rating for the top 5 movies based on a custom scoring formula.
--- This code is not correct
+-- I doubt this request
+/*
 SELECT 
     m.movie_title, 
     m.movie_popularity, 
@@ -15,6 +16,8 @@ GROUP BY
     m.movie_title, 
     m.movie_popularity
 ORDER BY 
-    (m.movie_popularity * COUNT(r.rating_score) * AVG(r.rating_score)) DESC -- Custom scoring formula based on popularity, count of votes, and average rating
+    (m.movie_popularity * count_votes * avg_rating) DESC -- Custom scoring formula based on popularity, count of votes, and average rating
 LIMIT 5;
+*/
+
 

@@ -1,7 +1,7 @@
 -- SQLite
 -- Selects the movie title from the 'movies' table
 SELECT 
-    m.movie_title 
+    m.movie_title
 FROM 
     ratings r -- Creates an alias 'r' for the 'ratings' table
 
