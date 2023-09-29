@@ -1,11 +1,11 @@
 -- SQLite
 -- This query retrieves movie title, popularity, count of votes, and average rating for the top 5 movies based on a custom scoring formula.
-
+-- This code is not correct
 SELECT 
     m.movie_title, 
     m.movie_popularity, 
-    COUNT(r.rating_score) AS count_votes, -- Count the number of votes for each movie
-    AVG(r.rating_score) AS avg_rating -- Calculate the average rating for each movie
+    COUNT(r.rating_score) AS count_votes, 
+    AVG(r.rating_score) AS avg_rating
 FROM 
     ratings r -- Creates alias r
 JOIN 
