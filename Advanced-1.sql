@@ -1,14 +1,29 @@
 -- SQLite
+-- SELECT
+--     m.director_name, 
+--     AVG(r.rating_score) as rating_score
+-- FROM 
+--     ratings r
+-- JOIN 
+--     movies m ON m.movie_id = r.movie_id
+-- GROUP BY 
+--     m.director_name
+-- HAVING 
+--     AVG(r.rating_score) > 4
+-- ORDER BY
+--     rating_score;
+
 SELECT
-    m.director_name, 
-    AVG(r.rating_score) as rating_score
+    director_name, 
+    AVG(rating_score) as avg_rating_score
 FROM 
-    ratings r
-JOIN 
-    movies m ON m.movie_id = r.movie_id
+    ratings , movies
+WHERE
+   movies.movie_id = ratings.movie_id
 GROUP BY 
-    m.director_name
+    director_name
 HAVING 
-    AVG(r.rating_score) > 4
+    AVG(rating_score) > 4
 ORDER BY
-    rating_score;
+    avg_rating_score;
+    -- No termined
